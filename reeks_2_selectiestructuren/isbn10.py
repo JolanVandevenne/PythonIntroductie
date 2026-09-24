@@ -1,27 +1,12 @@
-getallen = []
-for getal in range(9):
-    getallen.append(int(input()))
-controlecijfer = int(input())
-controle = 0
-for i in getallen:
-    controle = controle + (i+ 1 * getallen[i])
-print(controle)
-if (controle % 11 == controlecijfer):
-    controleOK = "OK"
-else:
-    controleOK = "FOUT"
+lijst = [None] * 9
 
-print(controleOK)
+for i in range(len(lijst)):
+    lijst[i] = int(input()) * (i + 1)
 
-#------------------------------------
-x = [None] * 3
+controleGetal = int(input())
+sum = sum(lijst) % 11
 
-for i in range(len(x)):
-    x[i] = int(input())
-
-sum = sum([i*val for i, val in enumerate(x) if i < len(x) - 1])
-
-if sum % 11 == x[len(x) -1]:
+if controleGetal == sum:
     print("OK")
 else:
     print("FOUT")
